@@ -1,0 +1,2 @@
+export const SHOW_HEAD_FAIL = 'SHOW_HEAD_FAIL'
+export const SHOW_HEAD_SUCC = 'SHOW_HEAD_SUCC'
