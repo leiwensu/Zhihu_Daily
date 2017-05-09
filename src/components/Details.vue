@@ -70,6 +70,7 @@
         padding: 0.4rem;
         background: rgba(0, 0, 0, 0.2);
         width: 100%;
+        box-sizing: border-box;
     }
     .details_head .details_name{
         color: #fff;
