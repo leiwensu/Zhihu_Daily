@@ -1,8 +1,13 @@
 <template>
   <div id="app" class="container">
+    <loading v-show="loadingShow"></loading>
     <nav-vue v-show="headShow"></nav-vue>
     <!-- <home-vue></home-vue> -->
-    <router-view></router-view>
+    <transition name="slide-down">
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+    </transition>
   </div>
 </template>
 
@@ -12,7 +17,8 @@ import {mapGetters} from 'vuex'
 export default {
     name: 'app',
     computed:mapGetters([
-            'headShow'
+            'headShow',
+            'loadingShow'
         ]),
     mounted (){
         var path = this.$route.path;
@@ -34,7 +40,7 @@ export default {
         }
     },
     components: {
-    navVue
+        navVue
     }
 }
 </script>
@@ -45,5 +51,14 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+}
+.slide-down-enter-active, .slide-down-leave-active {
+    transition: all .4s cubic-bezier(0, 1.2, 1, 0.5);
+    opacity: .7;
+    transform: translate3d(0, 6em, 0);
+}
+.slide-down-enter, .slide-down-leave-active {
+    opacity: .1;
+    transform: translate3d(0, 6em, 0);
 }
 </style>

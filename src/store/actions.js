@@ -9,5 +9,11 @@ export default{
     },
     headHide:({commit})=>{
         commit('headHide');
+    },
+    loadingShow:({commit})=>{
+        commit('loadingShow')
+    },
+    loadingHide:({commit})=>{
+        commit('loadingHide')
     }
 }

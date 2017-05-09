@@ -26,7 +26,6 @@
         }).catch(function(err){
           alert(err);
         })
-        var time = new Date().Format("yyyyMMdd");
       },
       components: {
         dateItem
