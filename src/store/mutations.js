@@ -2,7 +2,7 @@
 
 const state={
     headShow:true,
-    loadingShow:true
+    loadingShow:false
 };
 
 const mutations={
