@@ -37,14 +37,15 @@ import {sourceApi} from '../assets/js/common.js'
     background-color: #fff;
     margin-top: 0.4rem;
 }
-.daily_item_pic{
-    height: 3.36rem;
+.daily_item .daily_item_pic{
+    height: 4.36rem;
     overflow: hidden;
+    margin: 0 !important;
 }
 .daily_item_pic img{
     width: 100%;
 }
 .daily_item_con{
-    padding: 0.4rem;
+    padding: 0.2rem 0.4rem;
 }
 </style>
