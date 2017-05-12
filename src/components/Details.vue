@@ -24,12 +24,28 @@
             }
         },
         mounted(){
-            var _this = this;
-            _this.$http.get(sourceApi+'4/news/'+_this.$route.params.id).then(function(res){
-                _this.detailsData = res.data;
-            }).catch(function(err){
-                alert(err);
-            })
+            this.fatchData(this.$route.params.id);
+        },
+        watch:{
+            $route(to){
+                var reg=/details\/\d+/;
+                if(reg.test(to.path)){
+                    let articleId = this.$route.params.id;
+                    this.fatchData(articleId);
+                }
+
+            }
+        },
+        methods:{
+            fatchData(id){
+                let _this = this;
+                _this.$http.get(sourceApi+'4/news/'+id).then(function(res){
+                    _this.detailsData = res.data;
+                    console.log(res.data)
+                }).catch(function(err){
+                    alert(err);
+                })
+            }
         }
     }
 </script>

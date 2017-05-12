@@ -21,11 +21,7 @@
       mounted(){
         var _this = this;
         // 获取最新的文章
-        _this.$http.get(sourceApi+'4/news/latest').then(function(res){
-          _this.articleData.push(res.data);
-        }).catch(function(err){
-          alert(err);
-        })
+       _this.fetchData();
       },
       components: {
         dateItem
@@ -38,6 +34,7 @@
           var time = new Date(new Date()-str).Format('yyyyMMdd');
           _this.$http.get(sourceApi+'4/news/before/'+time).then(function(res){
             _this.articleData.push(res.data);
+            console.log(res.data)
         }).catch(function(err){
             alert(err);
         })
