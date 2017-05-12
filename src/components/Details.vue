@@ -41,7 +41,6 @@
                 let _this = this;
                 _this.$http.get(sourceApi+'4/news/'+id).then(function(res){
                     _this.detailsData = res.data;
-                    console.log(res.data)
                 }).catch(function(err){
                     alert(err);
                 })

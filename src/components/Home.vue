@@ -34,7 +34,6 @@
           var time = new Date(new Date()-str).Format('yyyyMMdd');
           _this.$http.get(sourceApi+'4/news/before/'+time).then(function(res){
             _this.articleData.push(res.data);
-            console.log(res.data)
         }).catch(function(err){
             alert(err);
         })

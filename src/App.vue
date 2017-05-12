@@ -54,7 +54,7 @@ export default {
 }
 .slide-down-enter-active, .slide-down-leave-active {
     transition: all .4s cubic-bezier(0, 1.2, 1, 0.5);
-    opacity: .7;
+    opacity: 1;
     transform: translate3d(0, 6em, 0);
 }
 .slide-down-enter, .slide-down-leave-active {
